@@ -21,7 +21,7 @@ def plot_result(x_label, y_label, plot_title, val_data, color):
 
 def cross_validation(model, _X, _y, _cv, _scoring, error_score):
 
-      if(_y < 20000):
+      if(len(_y) < 20000):
         oversample = SMOTE(sampling_strategy={0: 10000})
         _X, _y = oversample.fit_resample(_X, _y)
         oversample = SMOTE(sampling_strategy={1: 10000})
